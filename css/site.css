@@ -1,0 +1,140 @@
+/* brycejamesmiller.com
+   Plain HTML and CSS: no PHP, no build step, nothing to update.
+   Colors and graphics carried over from the original Sitebuilder template. */
+
+:root {
+  --frame: #202321;
+  --frame-light: #2e332f;
+  --banner: #a22b2a;
+  --paper: #ffffff;
+  --heading: #313131;
+  --text: #4f4f4f;
+  --muted: #8a8c8b;
+  --rule: #e2e2e2;
+  --link: #1f4e8c;
+  --link-hover: #a22b2a;
+  --footer-text: #acaead;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--frame) url(../images/frame-bg.gif); }
+
+body {
+  margin: 0;
+  padding: 0 16px 24px;
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+a { color: var(--link); }
+a:hover, a:focus { color: var(--link-hover); }
+
+.wrap { max-width: 960px; margin: 0 auto; }
+
+/* Top menu, white on the dark frame */
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 28px;
+  padding: 18px 0;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 14px;
+}
+.topnav a { color: #fff; text-decoration: none; padding-left: 16px; position: relative; }
+.topnav a::before {
+  content: ""; position: absolute; left: 0; top: 50%;
+  width: 8px; height: 8px; margin-top: -4px;
+  background: #e9ebea;
+}
+.topnav a:hover, .topnav a[aria-current="page"] { text-decoration: underline; }
+
+/* The page sheet */
+.sheet { background: var(--paper); border-radius: 8px 8px 0 0; overflow: hidden; }
+
+/* Red banner: emblem, name and dates on the left, Bryce's photo on the right */
+.banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 0 0 20px;
+  background: var(--banner) url(../images/banner-bg.gif) repeat-x;
+  background-size: auto 100%;
+  color: #fff;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+.banner .id { flex: none; width: 270px; padding: 16px 0; text-align: center; }
+.banner .emblem { display: block; margin: 0 auto 6px; width: 150px; height: auto; }
+.banner .photo { display: block; flex: 0 1 388px; min-width: 0; max-width: 388px; height: auto; margin-right: 8%; }
+.banner .name { font-size: 19px; font-weight: bold; line-height: 1.3; }
+.banner .dates { font-size: 12px; }
+.banner a { color: #fff; }
+
+/* Content */
+.content { padding: 20px 28px 32px; }
+
+.pathway {
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 22px;
+  color: var(--heading);
+}
+
+.content h2 {
+  margin: 28px 0 6px;
+  font-size: 20px;
+  color: var(--heading);
+}
+.content h2 a { text-decoration: none; }
+.content h2 a:hover { text-decoration: underline; }
+.content ul { margin-top: 6px; padding-left: 24px; }
+.content li { margin: 4px 0; }
+.content .indent { margin-left: 40px; }
+.lead { font-size: 17px; }
+
+/* Bottom menu and closing line, on the dark frame */
+.site-footer {
+  background: var(--frame-light) url(../images/footer-bg.gif);
+  padding: 14px 20px 18px;
+  text-align: center;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+.bottomnav { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; font-size: 13px; }
+.bottomnav a { color: #d6d8d7; }
+.copyright { margin: 12px 0 0; color: var(--footer-text); font-size: 14px; }
+
+/* ---------- Bryce the Bald Eagle ---------- */
+.eagle-intro { font-size: 17px; }
+
+.visit { margin: 32px 0 0; padding-top: 24px; border-top: 1px solid var(--rule); }
+.visit:first-of-type { border-top: 0; padding-top: 0; }
+.visit h2 { margin: 0; }
+.visit .meta { margin: 2px 0 10px; color: var(--muted); font-size: 14px; }
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin: 14px 0 0;
+}
+.photos figure { margin: 0; }
+.photos img { display: block; width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+.photos figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+.empty { color: var(--muted); font-style: italic; }
+
+/* Narrow screens: Bryce's photo on top, emblem, name and dates below it */
+@media (max-width: 720px) {
+  .banner { flex-direction: column; align-items: center; gap: 0; padding: 0; }
+  .banner .photo { order: -1; width: 100%; margin: 0; }
+  .banner .id { width: auto; padding: 14px 16px 16px; }
+  .banner .emblem { width: 110px; }
+  .content { padding: 16px 18px 24px; }
+  .content .indent { margin-left: 20px; }
+}
