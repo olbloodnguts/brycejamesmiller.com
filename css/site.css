@@ -132,7 +132,9 @@ a:hover, a:focus { color: var(--link-hover); }
 /* Narrow screens: Bryce's photo on top, emblem, name and dates below it */
 @media (max-width: 720px) {
   .banner { flex-direction: column; align-items: center; gap: 0; padding: 0; }
-  .banner .photo { order: -1; width: 100%; margin: 0; }
+  /* flex: none stops the 388px flex-basis from becoming the photo's height
+     in this stacked layout, which stretched it; height: auto keeps its shape */
+  .banner .photo { order: -1; flex: none; width: 100%; max-width: 100%; height: auto; margin: 0; }
   .banner .id { width: auto; padding: 14px 16px 16px; }
   .banner .emblem { width: 110px; }
   .content { padding: 16px 18px 24px; }
