@@ -140,3 +140,13 @@ a:hover, a:focus { color: var(--link-hover); }
   .content { padding: 16px 18px 24px; }
   .content .indent { margin-left: 20px; }
 }
+
+/* ---------- Obituary and Guest Book ---------- */
+.obituary h2, .guestbook h2 { margin-top: 8px; }
+.guestbook { margin-top: 40px; padding-top: 8px; border-top: 1px solid var(--rule); }
+.gb-intro { color: var(--muted); font-size: 15px; }
+
+.gb-entry { margin: 22px 0 0; padding: 16px 18px; background: #f7f7f6; border-left: 3px solid var(--banner); border-radius: 4px; }
+.gb-entry h3 { margin: 0; font-size: 17px; color: var(--heading); }
+.gb-entry .meta { margin: 2px 0 8px; color: var(--muted); font-size: 13px; }
+.gb-entry p:last-child { margin-bottom: 0; }
